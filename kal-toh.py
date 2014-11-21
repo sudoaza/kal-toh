@@ -16,7 +16,9 @@ def main():
 
   b = Board()
   b.final()
-  b.rotations()
+  rots = b.rotations()
+  for ro in rots:
+    b.clone().rotate(ro[0],ro[1])
 
   while True:
     rate(10)
