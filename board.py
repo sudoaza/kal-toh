@@ -42,15 +42,14 @@ class Board:
 
     for face in faces:
       self.merge(face)
-      face.delete
+      face.delete()
 
     defased.delete()
 
+    # the other half
     roted = self.clone().rotate(vector(1,0,0),pi).rotate(vector(0,1,0),pi/5.0)
     self.merge(roted)
     roted.delete()
-#vector(-sqrt(3),-10,-0.5)
-
 
   def similarity(self, compare):
     best = self.get_closest(compare)
@@ -94,7 +93,7 @@ class Board:
     return rots
 
   def rotate(self, axis, angle, origin=vector(0,0,0)):
-    sleep(0.2)
+    sleep(0.22)
     for piece in self.pieces:
       piece.rotate(axis, angle, origin)
     return self
